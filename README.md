@@ -188,12 +188,20 @@ WysiwygEditor::make('content')
 
 ## Traducciones
 
-El plugin incluye traducciones en **español** e **inglés** por defecto.
+El plugin incluye traducciones en múltiples idiomas europeos por defecto.
 
 ### Idiomas Disponibles
 
 - 🇪🇸 Español (`es`)
 - 🇬🇧 Inglés (`en`)
+- 🇩🇪 Alemán (`de`)
+- 🇫🇷 Francés (`fr`)
+- 🇮🇹 Italiano (`it`)
+- 🇵🇹 Portugués (`pt`)
+- 🇵🇱 Polaco (`pl`)
+- 🇳🇱 Holandés (`nl`)
+- 🇷🇺 Ruso (`ru`)
+- 🇪🇸 Catalán (`ca`)
 
 ### Publicar Traducciones
 
