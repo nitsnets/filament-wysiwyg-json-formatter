@@ -33,9 +33,9 @@ npm run build
 ## Uso Básico
 
 ```php
-use Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components\WysiwygEditor;
+use Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components\WysiwygJsonFormatter;
 
-WysiwygEditor::make('content')
+WysiwygJsonFormatter::make('content')
     ->label('Contenido')
     ->required()
 ```
@@ -45,7 +45,7 @@ WysiwygEditor::make('content')
 Puedes personalizar los botones que aparecen en la barra de herramientas:
 
 ```php
-WysiwygEditor::make('content')
+WysiwygJsonFormatter::make('content')
     ->toolbarButtons([
         'bold',
         'italic',
@@ -80,7 +80,7 @@ Habilita las menciones de usuarios pasando un array de usuarios:
 ```php
 use App\Models\User;
 
-WysiwygEditor::make('content')
+WysiwygJsonFormatter::make('content')
     ->mentions(
         User::all()->map(fn (User $user) => [
             'id' => (string) $user->id,
@@ -144,10 +144,10 @@ El componente guarda y lee datos en formato JSON estructurado:
 ## Ejemplo Completo
 
 ```php
-use Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components\WysiwygEditor;
+use Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components\WysiwygJsonFormatter;
 use App\Models\User;
 
-WysiwygEditor::make('comment_content')
+WysiwygJsonFormatter::make('comment_content')
     ->label('Comentario')
     ->placeholder('Escribe un comentario o pulsa «@» para mencionar usuarios')
     ->required()
@@ -180,7 +180,7 @@ WysiwygEditor::make('comment_content')
 El componente es compatible con todas las reglas de validación de Filament:
 
 ```php
-WysiwygEditor::make('content')
+WysiwygJsonFormatter::make('content')
     ->required()
     ->minLength(10)
     ->maxLength(5000)

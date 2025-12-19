@@ -23,7 +23,7 @@ filament-wysiwyg-json-formatter/
 ├── src/
 │   ├── FilamentWysiwygJsonFormatterServiceProvider.php
 │   └── Forms/Components/
-│       └── WysiwygEditor.php
+│       └── WysiwygJsonFormatter.php
 ├── config/
 │   └── wysiwyg.php                     # Configuración del paquete
 ├── package.json                        # Dependencias npm

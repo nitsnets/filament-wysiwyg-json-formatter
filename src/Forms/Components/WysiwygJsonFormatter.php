@@ -5,7 +5,7 @@ namespace Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components;
 use Closure;
 use Filament\Forms\Components\Textarea;
 
-class WysiwygEditor extends Textarea
+class WysiwygJsonFormatter extends Textarea
 {
     protected string $view = 'filament-wysiwyg-json-formatter::forms.components.wysiwyg-editor';
 
