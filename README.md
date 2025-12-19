@@ -260,6 +260,12 @@ Styles are loaded asynchronously only when the component is used (`loadedOnReque
 - **Filament**: ^4.0
 - **Laravel**: ^11.0
 
+### Dependencies
+
+The package requires the following dependencies which are automatically installed:
+
+- `mallardduck/blade-lucide-icons` - For Lucide icons used in the toolbar
+
 ## License
 
 MIT
