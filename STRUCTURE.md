@@ -50,8 +50,6 @@ Esto genera `resources/dist/wysiwyg.css` optimizado y minificado.
 ```php
 return [
     'default_toolbar_buttons' => [...],  // Botones por defecto
-    'mentions_enabled' => true,          // Habilitar menciones
-    'dark_mode' => true,                 // Soporte dark mode
 ];
 ```
 

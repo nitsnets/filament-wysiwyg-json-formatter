@@ -9,24 +9,7 @@ class WysiwygEditor extends Textarea
 {
     protected string $view = 'filament-wysiwyg-json-formatter::forms.components.wysiwyg-editor';
 
-    protected array|Closure $toolbarButtons = [
-        'bold',
-        'italic',
-        'underline',
-        'strike',
-        'code',
-        'codeBlock',
-        'link',
-        'unorderedList',
-        'orderedList',
-        'checklist',
-        'divider',
-        'h1',
-        'h2',
-        'h3',
-        'blockquote',
-        'textColor',
-    ];
+    protected array|Closure|null $toolbarButtons = null;
 
     protected bool $enableMentions = false;
 
@@ -41,6 +24,27 @@ class WysiwygEditor extends Textarea
 
     public function getToolbarButtons(): array
     {
+        if ($this->toolbarButtons === null) {
+            $this->toolbarButtons = config('wysiwyg.default_toolbar_buttons', [
+                'bold',
+                'italic',
+                'underline',
+                'strike',
+                'code',
+                'codeBlock',
+                'link',
+                'unorderedList',
+                'orderedList',
+                'checklist',
+                'divider',
+                'h1',
+                'h2',
+                'h3',
+                'blockquote',
+                'textColor',
+            ]);
+        }
+
         return $this->evaluate($this->toolbarButtons);
     }
 
