@@ -1,48 +1,48 @@
 # Filament WYSIWYG JSON Formatter
 
-Un componente de formulario para Filament 4 que proporciona un editor WYSIWYG con salida en formato JSON estructurado y soporte para menciones de usuarios.
+A Filament 4 form component that provides a WYSIWYG editor with structured JSON output and user mentions support.
 
-## Características
+## Features
 
-- ✅ Editor WYSIWYG completo con contenteditable
-- ✅ Conversión bidireccional HTML ↔ JSON estructurado
-- ✅ Menciones de usuarios con panel de búsqueda
-- ✅ Toolbar personalizable con botones: bold, italic, underline, strike, code, codeBlock, link, lists, checklist, headers, blockquote, textColor
-- ✅ Soporte para dark mode
-- ✅ Estilos optimizados con PostCSS
-- ✅ Compatible con Livewire/Alpine.js
-- ✅ Formato de datos estructurado y fácil de procesar
+- ✅ Full WYSIWYG editor with contenteditable
+- ✅ Bidirectional HTML ↔ structured JSON conversion
+- ✅ User mentions with search panel
+- ✅ Customizable toolbar with buttons: bold, italic, underline, strike, code, codeBlock, link, lists, checklist, headers, blockquote, textColor
+- ✅ Dark mode support
+- ✅ Optimized styles with PostCSS
+- ✅ Compatible with Livewire/Alpine.js
+- ✅ Structured and easy-to-process data format
 
-## Instalación
+## Installation
 
-Instala el paquete vía Composer:
+Install the package via Composer:
 
 ```bash
 composer require nitsnets/filament-wysiwyg-json-formatter
 ```
 
-### Desarrollo del Paquete
+### Package Development
 
-Si estás contribuyendo al desarrollo del paquete, necesitas instalar las dependencias de npm y compilar los assets:
+If you're contributing to the package development, you need to install npm dependencies and compile assets:
 
 ```bash
 npm install
 npm run build
 ```
 
-## Uso Básico
+## Basic Usage
 
 ```php
 use Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components\WysiwygEditor;
 
 WysiwygEditor::make('content')
-    ->label('Contenido')
+    ->label('Content')
     ->required()
 ```
 
-## Personalizar Botones del Toolbar
+## Customize Toolbar Buttons
 
-Puedes personalizar los botones que aparecen en la barra de herramientas:
+You can customize the buttons that appear in the toolbar:
 
 ```php
 WysiwygEditor::make('content')
@@ -66,16 +66,16 @@ WysiwygEditor::make('content')
     ])
 ```
 
-### Botones Disponibles
+### Available Buttons
 
-- **Formato de texto**: `bold`, `italic`, `underline`, `strike`, `code`
-- **Bloques**: `codeBlock`, `h1`, `h2`, `h3`, `blockquote`
-- **Listas**: `unorderedList`, `orderedList`, `checklist`
-- **Otros**: `link`, `divider`, `textColor`
+- **Text formatting**: `bold`, `italic`, `underline`, `strike`, `code`
+- **Blocks**: `codeBlock`, `h1`, `h2`, `h3`, `blockquote`
+- **Lists**: `unorderedList`, `orderedList`, `checklist`
+- **Others**: `link`, `divider`, `textColor`
 
-## Menciones de Usuarios
+## User Mentions
 
-Habilita las menciones de usuarios pasando un array de usuarios:
+Enable user mentions by passing an array of users:
 
 ```php
 use App\Models\User;
@@ -89,28 +89,28 @@ WysiwygEditor::make('content')
     )
 ```
 
-Los usuarios pueden mencionar a otros escribiendo `@` seguido del nombre del usuario. Las menciones se guardan en formato JSON estructurado:
+Users can mention others by typing `@` followed by the user's name. Mentions are saved in structured JSON format:
 
 ```json
 {
   "type": "tag",
   "user": {
     "id": 123,
-    "username": "Juan Pérez",
-    "name": "Juan Pérez"
+    "username": "John Doe",
+    "name": "John Doe"
   }
 }
 ```
 
-## Formato de Datos
+## Data Format
 
-El componente guarda y lee datos en formato JSON estructurado:
+The component saves and reads data in structured JSON format:
 
 ```json
 {
   "comment": [
     {
-      "text": "Hola ",
+      "text": "Hello ",
       "attributes": {
         "bold": true
       }
@@ -119,8 +119,8 @@ El componente guarda y lee datos en formato JSON estructurado:
       "type": "tag",
       "user": {
         "id": 123,
-        "username": "Juan",
-        "name": "Juan"
+        "username": "John",
+        "name": "John"
       }
     },
     {
@@ -131,25 +131,25 @@ El componente guarda y lee datos en formato JSON estructurado:
 }
 ```
 
-### Tipos de Elementos Soportados
+### Supported Element Types
 
-- **Texto formateado**: bold, italic, underline, strike, code
-- **Enlaces**: con atributo `link`
-- **Colores de texto**: con atributo `color-class`
-- **Listas**: bullet, ordered, checklist (checked/unchecked)
-- **Bloques**: headers (h1-h3), blockquote, code-block
-- **Menciones**: tipo `tag` con información de usuario
-- **Separadores**: tipo `divider`
+- **Formatted text**: bold, italic, underline, strike, code
+- **Links**: with `link` attribute
+- **Text colors**: with `color-class` attribute
+- **Lists**: bullet, ordered, checklist (checked/unchecked)
+- **Blocks**: headers (h1-h3), blockquote, code-block
+- **Mentions**: `tag` type with user information
+- **Separators**: `divider` type
 
-## Ejemplo Completo
+## Complete Example
 
 ```php
 use Nitsnets\FilamentWysiwygJsonFormatter\Forms\Components\WysiwygEditor;
 use App\Models\User;
 
 WysiwygEditor::make('comment_content')
-    ->label('Comentario')
-    ->placeholder('Escribe un comentario o pulsa «@» para mencionar usuarios')
+    ->label('Comment')
+    ->placeholder('Write a comment or press «@» to mention users')
     ->required()
     ->toolbarButtons([
         'bold',
@@ -175,9 +175,9 @@ WysiwygEditor::make('comment_content')
     ->columnSpanFull()
 ```
 
-## Validación
+## Validation
 
-El componente es compatible con todas las reglas de validación de Filament:
+The component is compatible with all Filament validation rules:
 
 ```php
 WysiwygEditor::make('content')
@@ -186,49 +186,49 @@ WysiwygEditor::make('content')
     ->maxLength(5000)
 ```
 
-## Traducciones
+## Translations
 
-El plugin incluye traducciones en múltiples idiomas europeos por defecto.
+The plugin includes translations in multiple European languages by default.
 
-### Idiomas Disponibles
+### Available Languages
 
-- 🇪🇸 Español (`es`)
-- 🇬🇧 Inglés (`en`)
-- 🇩🇪 Alemán (`de`)
-- 🇫🇷 Francés (`fr`)
-- 🇮🇹 Italiano (`it`)
-- 🇵🇹 Portugués (`pt`)
-- 🇵🇱 Polaco (`pl`)
-- 🇳🇱 Holandés (`nl`)
-- 🇷🇺 Ruso (`ru`)
-- 🇪🇸 Catalán (`ca`)
+- 🇪🇸 Spanish (`es`)
+- 🇬🇧 English (`en`)
+- 🇩🇪 German (`de`)
+- 🇫🇷 French (`fr`)
+- 🇮🇹 Italian (`it`)
+- 🇵🇹 Portuguese (`pt`)
+- 🇵🇱 Polish (`pl`)
+- 🇳🇱 Dutch (`nl`)
+- 🇷🇺 Russian (`ru`)
+- 🇪🇸 Catalan (`ca`)
 
-### Publicar Traducciones
+### Publishing Translations
 
-Si deseas personalizar las traducciones, puedes publicar los archivos de idioma:
+If you want to customize translations, you can publish the language files:
 
 ```bash
 php artisan vendor:publish --tag=filament-wysiwyg-json-formatter-translations
 ```
 
-Esto copiará los archivos de traducción a `lang/vendor/filament-wysiwyg-json-formatter/` donde podrás modificarlos.
+This will copy the translation files to `lang/vendor/filament-wysiwyg-json-formatter/` where you can modify them.
 
-### Añadir Nuevos Idiomas
+### Adding New Languages
 
-Para añadir soporte a un nuevo idioma:
+To add support for a new language:
 
-1. Crea un nuevo directorio en `lang/vendor/filament-wysiwyg-json-formatter/` con el código del idioma (ej: `fr`, `de`, `pt`)
-2. Copia el contenido de `es/wysiwyg.php` o `en/wysiwyg.php`
-3. Traduce los textos al nuevo idioma
+1. Create a new directory in `lang/vendor/filament-wysiwyg-json-formatter/` with the language code (e.g., `fr`, `de`, `pt`)
+2. Copy the content from `es/wysiwyg.php` or `en/wysiwyg.php`
+3. Translate the texts to the new language
 
-### Estructura de Traducciones
+### Translation Structure
 
 ```php
 return [
     'toolbar' => [
         'bold' => 'Bold',
         'italic' => 'Italic',
-        // ... más botones
+        // ... more buttons
     ],
     'mentions' => [
         'title' => 'Mention users',
@@ -245,26 +245,25 @@ return [
 ];
 ```
 
-## Estilos
+## Styles
 
-Los estilos se cargan de forma asíncrona solo cuando el componente se utiliza (`loadedOnRequest`), lo que optimiza el rendimiento:
+Styles are loaded asynchronously only when the component is used (`loadedOnRequest`), which optimizes performance:
 
-- Soporte completo para dark mode
-- CSS optimizado con PostCSS y cssnano
-- Diseño responsive
-- Animaciones y transiciones suaves
+- Full dark mode support
+- Optimized CSS with PostCSS and cssnano
+- Responsive design
+- Smooth animations and transitions
 
-## Compatibilidad
+## Compatibility
 
 - **PHP**: ^8.2
 - **Filament**: ^4.0
 - **Laravel**: ^11.0
 
-## Licencia
+## License
 
 MIT
 
-## Créditos
+## Credits
 
-Desarrollado por [Nitsnets](https://nitsnets.com)
-
+Developed by [Nitsnets](https://nitsnets.com)
