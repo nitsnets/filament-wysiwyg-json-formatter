@@ -11,6 +11,5 @@ psalm.xml
 testbench.yaml
 vendor
 .phpunit.result.cache
-resources/dist
 .DS_Store
 
