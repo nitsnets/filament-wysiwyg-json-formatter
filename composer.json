@@ -1,0 +1,65 @@
+{
+    "name": "nitsnets/filament-wysiwyg-json-formatter",
+    "description": "A Filament 4 form component for WYSIWYG editing with JSON output and user mentions support",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "filament",
+        "filament-plugin",
+        "wysiwyg",
+        "editor",
+        "json",
+        "mentions",
+        "laravel"
+    ],
+    "homepage": "https://github.com/nitsnets/filament-wysiwyg-json-formatter",
+    "support": {
+        "issues": "https://github.com/nitsnets/filament-wysiwyg-json-formatter/issues",
+        "source": "https://github.com/nitsnets/filament-wysiwyg-json-formatter"
+    },
+    "authors": [
+        {
+            "name": "Borja Jiménez",
+            "email": "borja@nitsnets.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^4.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.1",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nitsnets\\FilamentWysiwygJsonFormatter\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nitsnets\\FilamentWysiwygJsonFormatter\\FilamentWysiwygJsonFormatterServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+
