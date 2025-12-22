@@ -14,7 +14,7 @@ filament-wysiwyg-json-formatter/
 │   │   └── es/wysiwyg.php              # Traducciones español
 │   └── views/
 │       └── forms/components/
-│           ├── wysiwyg-editor.blade.php     # Vista principal
+│           ├── wysiwyg-json-formatter.blade.php     # Vista principal
 │           └── partials/
 │               ├── toolbar.blade.php         # Barra de herramientas
 │               ├── color-picker.blade.php    # Selector de colores

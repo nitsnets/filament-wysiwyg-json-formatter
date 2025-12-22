@@ -7,7 +7,7 @@ use Filament\Forms\Components\Textarea;
 
 class WysiwygJsonFormatter extends Textarea
 {
-    protected string $view = 'filament-wysiwyg-json-formatter::forms.components.wysiwyg-editor';
+    protected string $view = 'filament-wysiwyg-json-formatter::forms.components.wysiwyg-json-formatter';
 
     protected array|Closure|null $toolbarButtons = null;
 

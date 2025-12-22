@@ -1,13 +1,13 @@
 /* Filament WYSIWYG JSON Formatter Styles */
 
-.fi-fo-wysiwyg-editor-container {
+.fi-fo-wysiwyg-json-formatter-container {
     border: 1px solid rgb(229 231 235);
     border-radius: 0.375rem;
     overflow: hidden;
     background-color: white;
 }
 
-.dark .fi-fo-wysiwyg-editor-container {
+.dark .fi-fo-wysiwyg-json-formatter-container {
     border-color: rgb(55 65 81);
     background-color: rgb(31 41 55);
 }

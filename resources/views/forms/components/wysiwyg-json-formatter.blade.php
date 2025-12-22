@@ -1703,7 +1703,7 @@
             }
         }"
         wire:ignore
-        class="fi-fo-wysiwyg-editor-container"
+        class="fi-fo-wysiwyg-json-formatter-container"
         x-on:selectionchange.document="updateActiveStyles()"
     >
         {{-- Toolbar --}}
